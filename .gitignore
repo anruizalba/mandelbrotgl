@@ -1,0 +1,34 @@
+
+# build directories
+
+cmake-*/
+build*/
+imports/build*/
+reports/
+
+# VS Code settings
+.vscode/
+
+#Clion settings
+.idea/
+
+# Composer vendor
+vendor/
+
+<<<<<<< HEAD
+# Data results
+result.csv
+
+#temporal files
+*.swp
+
+=======
+# Vim
+*.swp
+
+# FMU
+fmuTmp*/
+
+# Data
+*.csv
+>>>>>>> 2a12964ec8315f74c8707f7c0ece517606de8d2d
