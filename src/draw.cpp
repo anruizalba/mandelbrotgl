@@ -16,6 +16,8 @@ Draw::Draw() :
         proj_location(0),
         color_location(0),
         offset_x_location(0),
+        offset_y_location(0),
+        zoom_location(0),
         object(0),
         mv_location(0),
         mv_location2(0),
@@ -89,7 +91,9 @@ void Draw::makeDraw(drawArray *state, bool wireframe, bool enable_up, float heig
 
     float offset_x = height;
 
-    glUniform1f(offset_x_location, offset_x);
+    glUniform1f(offset_x_location, state->JValue[0]);
+    glUniform1f(offset_y_location, state->JValue[1]);
+    glUniform1f(zoom_location, state->JValue[2]);
     glUniformMatrix4fv(proj_location, 1, GL_FALSE, proj_matrix);
     glUniformMatrix4fv(mv_location, 1, GL_FALSE, mv_matrix);
 
@@ -126,4 +130,6 @@ void Draw::load_shaders(const std::string& shaders_path) {
     mv_location = glGetUniformLocation(program, "mv_matrix");
     proj_location = glGetUniformLocation(program, "proj_matrix");
     offset_x_location = glGetUniformLocation(program, "offset_x");
+    offset_y_location = glGetUniformLocation(program, "offset_y");
+    zoom_location = glGetUniformLocation(program, "zoom");
 }

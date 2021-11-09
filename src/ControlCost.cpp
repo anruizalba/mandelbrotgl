@@ -23,8 +23,8 @@
 ControlCost::ControlCost (
 
 ) :
-        N(1000),
-        state{index, {0.0f, 0.0f, 0.0f, 0.0f}},
+        N(10000),
+        state{index, {0.0f, 0.0f, 0.0f, -1.0f}},
 	    index(0)
 {
 }

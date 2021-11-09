@@ -167,16 +167,16 @@ void dispmap::render(drawArray* state)
     glClearBufferfv(GL_COLOR, 0, black);
     glClearBufferfv(GL_DEPTH, 0, &one);
 
-
-  //  glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB);
-   // glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+    state->JValue[0] = offset_x;
+    state->JValue[1] = offset_y;
+    state->JValue[2] = zoom;
 
 
     draw.makeDraw(state, wireframe, enable_up, height, (float)info.windowWidth, (float)info.windowHeight, window);
 
     glfwSwapBuffers(window);
-//    glfwGetKey(window, GLFW_KEY_ESCAPE);
-//    glfwWindowShouldClose(window);
+    glfwGetKey(window, GLFW_KEY_ESCAPE);
+    glfwWindowShouldClose(window);
     glfwPollEvents();
 
 }
@@ -210,21 +210,25 @@ void dispmap::onKey(int key, int action) {
                 break;
             case GLFW_KEY_KP_SUBTRACT:
                 break;
-            case 'F':
+            case 'S':
+		zoom += 0.01f;
                 break;
-            case 'W':
+            case 'A':
+		zoom -= 0.01f;
                 break;
             case 'P':
                 break;
             case 'J':
+		offset_x += 0.01f;
                 break;
             case 'K':
+		offset_x -= 0.01f;
                 break;
             case 'D':
-                height += 0.5f;
+                offset_y += 0.01f;
                 break;
-            case 'S':
-                height -= 0.5f;
+            case 'F':
+                offset_y -= 0.01f;
                 break;
             default:
                 break;

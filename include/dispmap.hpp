@@ -79,6 +79,9 @@ private:
 
     bool enable_up;
     float height;
+    float zoom;
+    float offset_x;
+    float offset_y;
     bool wireframe;
     Draw draw;
 

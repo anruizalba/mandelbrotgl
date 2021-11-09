@@ -30,6 +30,8 @@ class Draw
     GLint           proj_location;
     GLint           color_location;
     GLint           offset_x_location;
+    GLint           offset_y_location;
+    GLint           zoom_location;
     GLint           object;
     GLint           object2;
     GLint           mv_location;

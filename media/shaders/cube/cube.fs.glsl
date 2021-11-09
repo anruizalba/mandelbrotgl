@@ -6,6 +6,8 @@ out vec4 frag_color;
 in VS_OUT                               
 {                                       
     float offset_x ;                         
+    float offset_y ;                         
+    float zoom ;                         
 } fs_in;
  
 #define MAX_ITERATIONS 500
@@ -13,9 +15,9 @@ in VS_OUT
 int get_iterations()
 {
 
-    float zoom = fs_in.offset_x;
-    float center_x = -1.4;
-    float center_y = 0.0;
+    float zoom = fs_in.zoom;
+    float center_x = fs_in.offset_x;
+    float center_y = fs_in.offset_y;
     float real = ((gl_FragCoord.x / 1080.0 - 0.5) * zoom + center_x);
     float imag = ((gl_FragCoord.y / 1080.0 - 0.5) * zoom + center_y);
  
