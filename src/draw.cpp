@@ -93,7 +93,7 @@ void Draw::makeDraw(drawArray *state, bool wireframe, bool enable_up, float heig
 
     glUniform1f(offset_x_location, state->JValue[0]);
     glUniform1f(offset_y_location, state->JValue[1]);
-    glUniform1f(zoom_location, state->JValue[2]);
+    glUniform1f(zoom_location, state->JValue[2] + 3.0f);
     glUniformMatrix4fv(proj_location, 1, GL_FALSE, proj_matrix);
     glUniformMatrix4fv(mv_location, 1, GL_FALSE, mv_matrix);
 

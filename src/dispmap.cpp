@@ -211,24 +211,24 @@ void dispmap::onKey(int key, int action) {
             case GLFW_KEY_KP_SUBTRACT:
                 break;
             case 'S':
-		zoom += 0.01f;
+		zoom += 0.04f;
                 break;
             case 'A':
-		zoom -= 0.01f;
+		zoom -= 0.04f;
                 break;
             case 'P':
                 break;
             case 'J':
-		offset_x += 0.01f;
+		offset_x += 0.04f;
                 break;
             case 'K':
-		offset_x -= 0.01f;
+		offset_x -= 0.04f;
                 break;
             case 'D':
-                offset_y += 0.01f;
+                offset_y += 0.04f;
                 break;
             case 'F':
-                offset_y -= 0.01f;
+                offset_y -= 0.04f;
                 break;
             default:
                 break;
