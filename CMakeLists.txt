@@ -6,7 +6,7 @@ include(ExternalProject)
 #   P R O J E C T
 #############################################################################
 
-set(package "openrti-adapter-project")
+set(package "OpenGL-Project")
 project(${package})
 
 
@@ -14,7 +14,7 @@ project(${package})
 #   Application
 #############################################################################
 
-set(application "hla-control-cost")
+set(application "mandelbrotgl")
 set(CMAKE_CXX_STANDARD 11)
 
 SET(CMAKE_C_FLAGS " -Wall -Wno-deprecated -fPIC -m64 ${CMAKE_C_FLAGS}")
